@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        
+        <title>Page Title</title>
+    </head>
+    <body>
+       <div class="card-amor">
+    <div style="font-size: 50px; animation: latido 1.2s infinite;">❤️</div>
+    </div>
+        <form id="propuestaForm" action="https://formspree.io/f/mreyqpdz" method="POST">
+  <input type="hidden" name="Respuesta" value="¡DIJO QUE SÍ, MANO! 👑">
+  
+  <div style="text-align: center; margin-top: 50px;">
+    <h2>¿Quieres ser mi novia, Genesys? ❤️</h2>
+    
+    <button type="submit" id="btnSi" class="btn-propuesta">SÍ</button>
+    
+    <button type="button" id="btnNo" class="btn-propuesta" style="position: absolute;">NO</button>
+  </div>
+</form>
+
+<script>
+  const btnNo = document.getElementById('btnNo');
+
+  // Función para mover el botón a una posición aleatoria
+  btnNo.addEventListener('mouseover', function() {
+    const x = Math.random() * (window.innerWidth - btnNo.clientWidth);
+    const y = Math.random() * (window.innerHeight - btnNo.clientHeight);
+    
+    btnNo.style.left = x + 'px';
+    btnNo.style.top = y + 'px';
+  });
+
+  // Por si acaso intenta darle clic en el cel (touch)
+  btnNo.addEventListener('touchstart', function(e) {
+    e.preventDefault();
+    const x = Math.random() * (window.innerWidth - btnNo.clientWidth);
+    const y = Math.random() * (window.innerHeight - btnNo.clientHeight);
+    
+    btnNo.style.left = x + 'px';
+    btnNo.style.top = y + 'px';
+  });
+</script>
+
+
+<style>
+@keyframes latido {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.2); }
+    100% { transform: scale(1); }
+}
+
+/* Fondo romántico con un degradado suave */
+body {
+    background: linear-gradient(135deg, #ff9a9e 0%, #fad0c4 100%);
+    font-family: 'Poppins', sans-serif; /* Una fuente redondita se ve más cuchi */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    overflow: hidden; /* Para que el botón "No" no cree barras de scroll */
+}
+
+/* El contenedor principal */
+.card-amor {
+    background: rgba(255, 255, 255, 0.8);
+    padding: 30px;
+    border-radius: 25px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border: 2px solid #ffb6c1;
+}
+
+h2 {
+    color: #ff4d6d;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.05);
+}
+
+/* Estilo de los botones */
+.btn-propuesta {
+    padding: 15px 35px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    border: none;
+    border-radius: 50px; /* Botones tipo píldora, muy suaves */
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    margin: 10px;
+}
+
+/* Botón SÍ (El ganador) */
+#btnSi {
+    background-color: #ff4d6d;
+    color: white;
+    box-shadow: 0 5px 15px rgba(255, 77, 109, 0.4);
+}
+
+#btnSi:hover {
+    transform: scale(1.1); /* Se agranda un poquito al pasar el mouse */
+    background-color: #ff758f;
+}
+
+/* Botón NO (El que huye) */
+#btnNo {
+    background-color: #808080;
+    color: white;
+    opacity: 0.8;
+}
+</style>
+    </body>
+  </html>
